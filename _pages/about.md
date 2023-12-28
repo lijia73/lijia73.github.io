@@ -19,8 +19,8 @@ You can find my CV here [Jia Li's Profile](../assets/profile.pdf).
 # Teaching
 Teaching Assistant, The Chinese University of Hong Kong
 
-- CSCI\cal{3100} Software Engineering (Instructor: Michael R. Lyu.)
+- CSCI3100 Software Engineering (Instructor: Michael R. Lyu.)
   - Spring 2024
-- CSCI\cal{2730} Introduction to Blockchain Technologies and Applications (Instructor: CHEUNG Yuk Kin)
+- CSCI2730 Introduction to Blockchain Technologies and Applications (Instructor: CHEUNG Yuk Kin)
   - Fall 2023 
 
