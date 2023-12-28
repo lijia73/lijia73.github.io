@@ -8,8 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I’m a first year undergraduate student from  [the Department of Computer Science and Engineering](https://www.cse.cuhk.edu.hk), [The Chinese University of Hong Kong](https://cuhk.edu.hk/chinese/index.html). My research interest includes operating system, verification and code analysis.
+I’m a first year graduate student from  [the Department of Computer Science and Engineering](https://www.cse.cuhk.edu.hk), [The Chinese University of Hong Kong](https://cuhk.edu.hk/chinese/index.html). My research interest includes operating system, verification and code analysis.
 
-I'm very fortunate to be advised by [Prof.Michael R. Lyu.](https://www.cse.cuhk.edu.hk/lyu/home) of [ARISE Lab](http://ariselab.cse.cuhk.edu.hk/).
+I'm very fortunate to be advised by [Prof. Michael R. Lyu.](https://www.cse.cuhk.edu.hk/lyu/home) of [ARISE Lab](http://ariselab.cse.cuhk.edu.hk/).
 
 You can find my CV here [Jia Li's Profile](../assets/profile.pdf).
