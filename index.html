@@ -11,197 +11,201 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="sidebar-inner">
-          <h1 class="name">Jia Li</h1>
-          <p class="name-zh" lang="zh-Hans">李佳</p>
-          <p class="role">Ph.D. Student in Computer Science</p>
-          <p class="affil">The Chinese University of Hong Kong</p>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="topbar-name" href="#top">Jia Li</a>
+        <nav class="topbar-nav" aria-label="Section navigation">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="mailto:gaillee666@outlook.com">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-          <nav class="contact" aria-label="Contact and links">
-            <a href="mailto:gaillee666@outlook.com">Email</a>
-            <a href="https://arxiv.org/a/li_j" target="_blank" rel="noreferrer">arXiv</a>
-            <a href="https://github.com/lijia73" target="_blank" rel="noreferrer">GitHub</a>
-          </nav>
-
-          <nav class="toc" aria-label="Section navigation">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#experience">Experience</a>
-          </nav>
-        </div>
-      </aside>
-
-      <main class="content">
-        <section id="about" class="block">
-          <p class="lead">
+    <section id="top" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Ph.D. Student · Computer Science</p>
+          <h1 class="hero-name">Jia Li <span lang="zh-Hans">李佳</span></h1>
+          <p class="hero-affil">The Chinese University of Hong Kong</p>
+          <p class="hero-lead">
             I work on <em>agentic software engineering</em> &mdash; building and
             rigorously evaluating code agents that reason over entire
             repositories, diagnose failures, repair programs, and learn from
             weak execution feedback.
           </p>
-          <p>
-            My research connects code large language models with classical
-            program analysis and reinforcement learning, with a strong emphasis
-            on realistic, repository-level, industrial-scale evaluation. During
-            2025&ndash;2026 I worked as an algorithm research intern at WeChat,
-            where several of these systems were deployed in production.
-          </p>
-        </section>
+          <div class="hero-links">
+            <a class="btn primary" href="mailto:gaillee666@outlook.com">Email</a>
+            <a class="btn" href="https://arxiv.org/a/li_j" target="_blank" rel="noreferrer">arXiv</a>
+            <a class="btn" href="https://github.com/lijia73" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-avatar" aria-hidden="true">JL</div>
+      </div>
+    </section>
 
-        <section id="research" class="block">
-          <h2 class="section-label">Research Interests</h2>
-          <ul class="interests">
-            <li>Repository-level agentic code reasoning and evaluation</li>
-            <li>Automated program repair and vulnerability repair</li>
-            <li>Whitebox software testing and compilation-error repair</li>
-            <li>Reinforcement learning for code agents (GRPO, RLHF, agentic RL)</li>
-            <li>Static analysis, dynamic slicing, and dependency-based localization</li>
-          </ul>
-        </section>
+    <main class="content">
+      <section id="about" class="block">
+        <p>
+          My research connects code large language models with classical program
+          analysis and reinforcement learning, with a strong emphasis on
+          realistic, repository-level, industrial-scale evaluation. During
+          2025&ndash;2026 I worked as an algorithm research intern at WeChat,
+          where several of these systems were deployed in production.
+        </p>
+      </section>
 
-        <section id="publications" class="block">
-          <h2 class="section-label">Publications</h2>
-          <p class="note">First author on all listed works.</p>
+      <section id="research" class="block">
+        <h2 class="section-label">Research Interests</h2>
+        <ul class="interests">
+          <li>Repository-level agentic code reasoning and evaluation</li>
+          <li>Automated program repair and vulnerability repair</li>
+          <li>Whitebox software testing and compilation-error repair</li>
+          <li>Reinforcement learning for code agents (GRPO, RLHF, agentic RL)</li>
+          <li>Static analysis, dynamic slicing, and dependency-based localization</li>
+        </ul>
+      </section>
 
-          <ol class="pubs">
-            <li class="pub">
-              <p class="pub-title">
-                Signal Reshaping for GRPO in Weak-Feedback Agentic Code Repair
-              </p>
-              <p class="pub-venue">Preprint</p>
-              <p class="pub-desc">
-                Reframes weak-feedback multi-turn code repair as a GRPO
-                trainability problem, using layered rewards, step-level process
-                weighting, and failure-cause-aware rollout governance.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2605.07276" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </li>
+      <section id="publications" class="block">
+        <h2 class="section-label">Publications</h2>
+        <p class="note">First author on all listed works.</p>
 
-            <li class="pub">
-              <p class="pub-title">
-                Holmes: Multimodal Agentic Diagnosis for Mixed-Language Mobile
-                Crashes at Industrial Scale
-              </p>
-              <p class="pub-venue">FSE 2026, Industry Track &middot; CCF-A</p>
-              <p class="pub-desc">
-                A retrieve&ndash;explore&ndash;reason multi-agent system for
-                post-mortem mobile crash diagnosis over WeChat's mixed-language
-                codebase, reaching 87.6% function-level localization accuracy.
-              </p>
-              <p class="pub-links">
-                <a href="https://conf.researchr.org/track/fse-2026/fse-2026-industry-papers" target="_blank" rel="noreferrer">Program</a>
-              </p>
-            </li>
+        <ol class="pubs">
+          <li class="pub">
+            <p class="pub-title">
+              Signal Reshaping for GRPO in Weak-Feedback Agentic Code Repair
+            </p>
+            <p class="pub-venue"><span class="tag preprint">Preprint</span></p>
+            <p class="pub-desc">
+              Reframes weak-feedback multi-turn code repair as a GRPO
+              trainability problem, using layered rewards, step-level process
+              weighting, and failure-cause-aware rollout governance.
+            </p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/abs/2605.07276" target="_blank" rel="noreferrer">arXiv</a>
+            </p>
+          </li>
 
-            <li class="pub">
-              <p class="pub-title">
-                From Laboratory to Real-World Applications: Benchmarking Agentic
-                Code Reasoning at the Repository Level
-              </p>
-              <p class="pub-venue">ACL 2026 Main, Oral &middot; CCF-A</p>
-              <p class="pub-desc">
-                Introduces RepoReason, a repository-level benchmark built on
-                abductive assertion verification and execution-driven mutation,
-                diagnosing aggregation deficits in frontier code agents.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2601.03731" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </li>
+          <li class="pub">
+            <p class="pub-title">
+              Holmes: Multimodal Agentic Diagnosis for Mixed-Language Mobile
+              Crashes at Industrial Scale
+            </p>
+            <p class="pub-venue"><span class="tag">FSE 2026, Industry Track</span></p>
+            <p class="pub-desc">
+              A retrieve&ndash;explore&ndash;reason multi-agent system for
+              post-mortem mobile crash diagnosis over WeChat's mixed-language
+              codebase, reaching 87.6% function-level localization accuracy.
+            </p>
+            <p class="pub-links">
+              <a href="https://conf.researchr.org/track/fse-2026/fse-2026-industry-papers" target="_blank" rel="noreferrer">Program</a>
+            </p>
+          </li>
 
-            <li class="pub">
-              <p class="pub-title">
-                VulKey: Automated Vulnerability Repair Guided by Domain-Specific
-                Repair Patterns
-              </p>
-              <p class="pub-venue">FSE 2026 &middot; CCF-A</p>
-              <p class="pub-desc">
-                Guides vulnerability repair with a hierarchical abstraction of
-                CWE/NVD expert knowledge, improving PrimeVul and Vul4J accuracy
-                across languages and models.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2605.01769" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </li>
+          <li class="pub">
+            <p class="pub-title">
+              From Laboratory to Real-World Applications: Benchmarking Agentic
+              Code Reasoning at the Repository Level
+            </p>
+            <p class="pub-venue"><span class="tag">ACL 2026 Main, Oral</span></p>
+            <p class="pub-desc">
+              Introduces RepoReason, a repository-level benchmark built on
+              abductive assertion verification and execution-driven mutation,
+              diagnosing aggregation deficits in frontier code agents.
+            </p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/abs/2601.03731" target="_blank" rel="noreferrer">arXiv</a>
+            </p>
+          </li>
 
-            <li class="pub">
-              <p class="pub-title">
-                MioHint: LLM-Assisted Request Mutation for Whitebox REST API
-                Testing
-              </p>
-              <p class="pub-venue">ICSE 2026 &middot; CCF-A</p>
-              <p class="pub-desc">
-                Combines statement-level def-use analysis with LLM-generated
-                mutation hints to escape fitness plateaus in whitebox REST API
-                testing.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2504.05738" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </li>
+          <li class="pub">
+            <p class="pub-title">
+              VulKey: Automated Vulnerability Repair Guided by Domain-Specific
+              Repair Patterns
+            </p>
+            <p class="pub-venue"><span class="tag">FSE 2026</span></p>
+            <p class="pub-desc">
+              Guides vulnerability repair with a hierarchical abstraction of
+              CWE/NVD expert knowledge, improving PrimeVul and Vul4J accuracy
+              across languages and models.
+            </p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/abs/2605.01769" target="_blank" rel="noreferrer">arXiv</a>
+            </p>
+          </li>
 
-            <li class="pub">
-              <p class="pub-title">
-                ComBench: A Repository-level Real-world Benchmark for Compilation
-                Error Repair
-              </p>
-              <p class="pub-venue">Preprint</p>
-              <p class="pub-desc">
-                Mines and faithfully reproduces real C/C++ compilation failures
-                from GitHub CI histories, exposing the gap between compilable and
-                semantically correct LLM patches.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2603.27333" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </li>
-          </ol>
-        </section>
+          <li class="pub">
+            <p class="pub-title">
+              MioHint: LLM-Assisted Request Mutation for Whitebox REST API
+              Testing
+            </p>
+            <p class="pub-venue"><span class="tag">ICSE 2026</span></p>
+            <p class="pub-desc">
+              Combines statement-level def-use analysis with LLM-generated
+              mutation hints to escape fitness plateaus in whitebox REST API
+              testing.
+            </p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/abs/2504.05738" target="_blank" rel="noreferrer">arXiv</a>
+            </p>
+          </li>
 
-        <section id="experience" class="block">
-          <h2 class="section-label">Experience &amp; Education</h2>
-          <ul class="entries">
-            <li>
-              <span class="entry-when">2025 &ndash; 2026</span>
-              <span class="entry-what">
-                <strong>Algorithm Research Intern</strong>, WeChat (Tencent).
-                Industrial code-agent systems for crash diagnosis and
-                weak-feedback code repair.
-              </span>
-            </li>
-            <li>
-              <span class="entry-when">2023 &ndash; 2027</span>
-              <span class="entry-what">
-                <strong>Ph.D. in Computer Science</strong>, The Chinese
-                University of Hong Kong. <span class="dim">(expected)</span>
-              </span>
-            </li>
-            <li>
-              <span class="entry-when">2018 &ndash; 2022</span>
-              <span class="entry-what">
-                <strong>B.Eng. in Software Engineering</strong>, Sun Yat-sen
-                University.
-              </span>
-            </li>
-          </ul>
-        </section>
+          <li class="pub">
+            <p class="pub-title">
+              ComBench: A Repository-level Real-world Benchmark for Compilation
+              Error Repair
+            </p>
+            <p class="pub-venue"><span class="tag preprint">Preprint</span></p>
+            <p class="pub-desc">
+              Mines and faithfully reproduces real C/C++ compilation failures
+              from GitHub CI histories, exposing the gap between compilable and
+              semantically correct LLM patches.
+            </p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/abs/2603.27333" target="_blank" rel="noreferrer">arXiv</a>
+            </p>
+          </li>
+        </ol>
+      </section>
 
-        <footer class="page-footer">
-          <p>&copy; 2026 Jia Li &middot; Last updated June 2026</p>
-        </footer>
-      </main>
-    </div>
+      <section id="experience" class="block">
+        <h2 class="section-label">Experience &amp; Education</h2>
+        <ul class="entries">
+          <li>
+            <span class="entry-when">2025 &ndash; 2026</span>
+            <span class="entry-what">
+              <strong>Algorithm Research Intern</strong>, WeChat (Tencent).
+              Industrial code-agent systems for crash diagnosis and
+              weak-feedback code repair.
+            </span>
+          </li>
+          <li>
+            <span class="entry-when">2023 &ndash; 2027</span>
+            <span class="entry-what">
+              <strong>Ph.D. in Computer Science</strong>, The Chinese University
+              of Hong Kong. <span class="dim">(expected)</span>
+            </span>
+          </li>
+          <li>
+            <span class="entry-when">2018 &ndash; 2022</span>
+            <span class="entry-what">
+              <strong>B.Eng. in Software Engineering</strong>, Sun Yat-sen
+              University.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="page-footer">
+        <p>&copy; 2026 Jia Li &middot; Last updated June 2026</p>
+      </footer>
+    </main>
   </body>
 </html>
