@@ -434,6 +434,12 @@ a:hover {
   color: var(--muted);
 }
 
+.tag.oral {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(31, 95, 191, 0.28);
+}
+
 .pub-desc {
   margin: 12px 0 0;
   font-size: 0.98rem;
