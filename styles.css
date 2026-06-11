@@ -353,6 +353,80 @@ a:hover {
   color: var(--blue-dark);
 }
 
+/* Vision: self-evolving loop */
+
+.vision-lead {
+  margin: 0 0 22px;
+  max-width: 70ch;
+}
+
+.loop {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.loop li {
+  position: relative;
+  padding: 16px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  border-radius: 10px;
+}
+
+.loop li:not(:last-child)::after {
+  content: "\2192";
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.loop-stage {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.loop-sig {
+  display: block;
+  margin-top: 7px;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.loop-back {
+  margin: 0 0 22px;
+  text-align: right;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.vision-note {
+  margin: 0;
+  padding: 18px 20px;
+  background: var(--blue-tint);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  border-radius: 10px;
+  max-width: 74ch;
+}
+
+.vision-note strong {
+  color: var(--blue-dark);
+}
+
 /* Publications */
 
 .note {
@@ -581,6 +655,24 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
+  .loop {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 26px;
+    row-gap: 30px;
+  }
+
+  .loop li:not(:last-child)::after {
+    content: "\2192";
+  }
+
+  .loop li:nth-child(2)::after {
+    content: "\2193";
+    right: 50%;
+    top: auto;
+    bottom: -22px;
+    transform: translateX(50%);
+  }
+
   .pub {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -614,6 +706,20 @@ a:hover {
 
   .pub {
     padding: 16px;
+  }
+
+  .loop {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .loop li:not(:last-child)::after,
+  .loop li:nth-child(2)::after {
+    content: "\2193";
+    right: 50%;
+    top: auto;
+    bottom: -19px;
+    transform: translateX(50%);
   }
 
   .entries li {
