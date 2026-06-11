@@ -372,8 +372,11 @@ a:hover {
 
 .pub {
   counter-increment: pub;
-  position: relative;
-  padding: 22px 24px 22px 56px;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding: 18px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--blue);
@@ -387,21 +390,31 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.pub::before {
-  content: counter(pub);
-  position: absolute;
-  top: 22px;
-  left: 18px;
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--blue-soft);
-  color: var(--blue-dark);
-  font-size: 0.82rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
+.pub-fig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 132px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.pub-fig img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pub-fig:hover {
+  border-color: var(--blue);
+}
+
+.pub-body {
+  min-width: 0;
 }
 
 .pub-title {
@@ -411,6 +424,14 @@ a:hover {
   font-weight: 600;
   line-height: 1.38;
   color: var(--ink);
+}
+
+.pub-title::before {
+  content: "[" counter(pub) "]\00a0\00a0";
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--faint);
 }
 
 .pub-venue {
@@ -559,6 +580,15 @@ a:hover {
   .pillars {
     grid-template-columns: 1fr;
   }
+
+  .pub {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .pub-fig {
+    height: 170px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -583,12 +613,7 @@ a:hover {
   }
 
   .pub {
-    padding: 20px 18px 20px 18px;
-  }
-
-  .pub::before {
-    position: static;
-    margin-bottom: 10px;
+    padding: 16px;
   }
 
   .entries li {
