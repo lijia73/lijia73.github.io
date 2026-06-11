@@ -138,6 +138,14 @@ a:hover {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.hero-alt {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .hero-affil {
   margin: 10px 0 0;
   font-size: 1.05rem;
