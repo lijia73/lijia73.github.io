@@ -4,7 +4,7 @@
   --ink: #0f1f33;
   --text: #34414f;
   --muted: #66748a;
-  --faint: #94a0b3;
+  --faint: #66748a;
   --line: #e3e9f2;
   --blue: #1f5fbf;
   --blue-dark: #16448c;
@@ -44,6 +44,20 @@ a {
 
 a:hover {
   color: var(--blue-dark);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.hero a:focus-visible {
+  outline-color: #fff;
+}
+
+[id] {
+  scroll-margin-top: 88px;
 }
 
 /* ---------- Top bar ---------- */
@@ -105,10 +119,10 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: 32px;
   max-width: var(--content-w);
   margin: 0 auto;
-  padding: 76px 32px 80px;
+  padding: 56px 32px 60px;
 }
 
 .hero-text {
@@ -233,13 +247,13 @@ a:hover {
   flex: none;
   display: grid;
   place-items: center;
-  width: 132px;
-  height: 132px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.45);
   font-family: var(--serif);
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -306,6 +320,8 @@ a:hover {
 
 .pillar {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 22px 20px 20px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -342,12 +358,8 @@ a:hover {
   color: var(--blue);
 }
 
-.pillar-q em {
-  font-style: italic;
-}
-
 .pillar-desc {
-  margin: 12px 0 0;
+  margin: 12px 0 16px;
   font-size: 0.93rem;
   color: var(--muted);
 }
@@ -356,17 +368,17 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 16px 0 0;
+  margin: auto 0 0;
   padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 
-.pillar-works span {
+.pillar-works a {
   padding: 3px 10px;
   border-radius: 6px;
   background: var(--blue-tint);
   border: 1px solid var(--line);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--blue-dark);
 }
@@ -549,6 +561,19 @@ a:hover {
   color: var(--faint);
 }
 
+.pub-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.pub-title a:hover,
+.pub-title a:focus-visible {
+  color: var(--blue-dark);
+  text-decoration-color: currentColor;
+}
+
 .pub-venue {
   display: flex;
   flex-wrap: wrap;
@@ -562,7 +587,7 @@ a:hover {
   border-radius: 999px;
   background: var(--blue-soft);
   color: var(--blue-dark);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -584,8 +609,22 @@ a:hover {
   box-shadow: 0 2px 6px rgba(31, 95, 191, 0.28);
 }
 
-.pub-desc {
+.pub-result {
   margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--blue-tint);
+  color: var(--blue-dark);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.pub-result strong {
+  font-weight: 600;
+}
+
+.pub-desc {
+  margin: 10px 0 0;
   font-size: 0.98rem;
   color: var(--muted);
 }
@@ -656,7 +695,7 @@ a:hover {
 }
 
 .entry-head .tag {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   padding: 2px 9px;
 }
 
@@ -685,8 +724,17 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--surface);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   color: var(--muted);
+}
+
+.entry-keys a:hover,
+.entry-keys a:focus-visible,
+.pillar-works a:hover,
+.pillar-works a:focus-visible {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--blue-dark);
 }
 
 .dim {
@@ -716,7 +764,7 @@ a:hover {
   }
 
   .hero-inner {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-start;
     gap: 28px;
     padding: 52px 24px 56px;
@@ -727,9 +775,7 @@ a:hover {
   }
 
   .hero-avatar {
-    width: 92px;
-    height: 92px;
-    font-size: 2.1rem;
+    display: none;
   }
 
   .content {
@@ -756,7 +802,8 @@ a:hover {
   }
 
   .pub-fig {
-    height: 170px;
+    grid-row: 2;
+    height: 112px;
   }
 
   .entry-head {
@@ -786,6 +833,12 @@ a:hover {
 
   .topbar-inner {
     padding: 12px 20px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .topbar-nav {
+    gap: 12px;
   }
 
   .topbar-nav a:nth-child(1) {
@@ -807,5 +860,21 @@ a:hover {
   .entries li {
     grid-template-columns: 1fr;
     gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  a,
+  .pub,
+  .pub-fig {
+    transition: none;
+  }
+
+  .pub:hover {
+    transform: none;
   }
 }

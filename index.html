@@ -18,7 +18,13 @@
     />
     <meta property="og:url" content="https://lijia73.github.io/" />
     <meta property="og:site_name" content="Jia Li (Linsay Li)" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://lijia73.github.io/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jia Li — Code Agents, Reinforcement Learning, Agentic Software Engineering — CUHK" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://lijia73.github.io/assets/social-preview.png" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <title>Jia Li (Linsay Li) | CUHK Ph.D. Student | Agentic Software Engineering</title>
     <script type="application/ld+json">
       {
@@ -58,7 +64,7 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=c8202ecb" />
+    <link rel="stylesheet" href="styles.css?v=81272ad8" />
   </head>
   <body>
     <header class="topbar">
@@ -67,8 +73,8 @@
         <nav class="topbar-nav" aria-label="Section navigation">
           <a href="#research">Research</a>
           <a href="#vision">Vision</a>
-          <a href="#publications">Publications</a>
           <a href="#experience">Experience</a>
+          <a href="#publications">Publications</a>
           <a href="mailto:gaillee666@outlook.com">Contact</a>
         </nav>
       </div>
@@ -121,46 +127,42 @@
       <section id="research" class="block">
         <h2 class="section-label">Research</h2>
         <p class="research-thesis">
-          LLM agents look capable on toy benchmarks, yet fail in real software
-          systems at three successive stages. My work follows this causal chain
-          and resolves each stage in turn.
+          I study how code agents use program structure, combine evidence across
+          files, and learn from execution feedback in real software systems.
         </p>
 
         <div class="pillars">
           <article class="pillar">
             <span class="pillar-num">1</span>
             <h3 class="pillar-name">Real Code</h3>
-            <p class="pillar-q">Can the agent <em>see</em>?</p>
+            <p class="pillar-q">Program context</p>
             <p class="pillar-desc">
-              Real, repository-level program information rarely enters the
-              model's context. I inject whitebox program slices so the agent
-              sees cross-function causal chains.
+              Give agents relevant program structure to guide code exploration
+              and API testing.
             </p>
-            <p class="pillar-works"><span>MioHint</span></p>
+            <p class="pillar-works"><a href="#paper-miohint">MioHint</a></p>
           </article>
 
           <article class="pillar">
             <span class="pillar-num">2</span>
             <h3 class="pillar-name">Real Reasoning</h3>
-            <p class="pillar-q">Can the agent <em>reason</em>?</p>
+            <p class="pillar-q">Evidence across files</p>
             <p class="pillar-desc">
-              Even with full context, agents fail to aggregate cross-file
-              evidence &mdash; an aggregation deficit. I diagnose it and converge
-              scattered runtime evidence in production.
+              Evaluate repository-level reasoning and connect code with runtime
+              evidence to diagnose production failures.
             </p>
-            <p class="pillar-works"><span>RepoReason</span><span>Holmes</span></p>
+            <p class="pillar-works"><a href="#paper-reporeason">RepoReason</a><a href="#paper-holmes">Holmes</a></p>
           </article>
 
           <article class="pillar">
             <span class="pillar-num">3</span>
             <h3 class="pillar-name">Real Reward</h3>
-            <p class="pillar-q">Can the agent <em>fix &amp; learn</em>?</p>
+            <p class="pillar-q">Learning from feedback</p>
             <p class="pillar-desc">
-              Patches may compile yet be wrong, and weak execution feedback is
-              hard to learn from. I reshape it into comparable, creditable, and
-              learnable training signal.
+              Use compilation, tests, and repair outcomes to evaluate patches
+              and train agents with reinforcement learning.
             </p>
-            <p class="pillar-works"><span>ComBench</span><span>VulKey</span><span>GRPO Reshaping</span></p>
+            <p class="pillar-works"><a href="#paper-combench">ComBench</a><a href="#paper-vulkey">VulKey</a><a href="#paper-grpo">GRPO Reshaping</a></p>
           </article>
         </div>
       </section>
@@ -168,16 +170,14 @@
       <section id="vision" class="block">
         <h2 class="section-label">Vision: Self-Evolving Software Systems</h2>
         <p class="vision-lead">
-          Every stage of the software lifecycle leaves observations and
-          feedback. My long-term goal is a closed-loop, self-evolving software
-          system &mdash; where agents turn these observations into learnable
-          signals and keep improving, cycle after cycle.
+          My long-term goal is to build software agents that improve through
+          use, learning from development, testing, and production feedback.
         </p>
 
         <div class="vision-grid">
           <figure class="loop-fig">
-            <img src="assets/devops-loop.png" alt="DevOps infinity loop: plan, code, build, test, release, deploy, operate, monitor" />
-            <figcaption>The DevOps lifecycle is one continuous feedback loop.</figcaption>
+            <img src="assets/devops-loop.png" width="840" height="486" loading="lazy" alt="DevOps infinity loop: plan, code, build, test, release, deploy, operate, monitor" />
+            <figcaption>Feedback from development through production.</figcaption>
           </figure>
 
           <ol class="loop">
@@ -201,161 +201,10 @@
         </div>
 
         <p class="vision-note">
-          These observations become the three signals my work grounds agents in
-          &mdash; <strong>Real Code</strong> (authentic artifacts),
-          <strong>Real Reasoning</strong> (attributable evidence chains), and
-          <strong>Real Reward</strong> (learnable execution feedback). I aim to
-          generalize this signal reshaping to broad weak-feedback, long-horizon
-          code tasks, so agents continuously self-evolve from real feedback.
+          <strong>Next direction:</strong> turn sparse feedback from long-running
+          software tasks into reliable training signals, and measure whether
+          agents improve on new tasks.
         </p>
-      </section>
-
-      <section id="publications" class="block">
-        <h2 class="section-label">Publications</h2>
-        <p class="note">First author on all listed works.</p>
-
-        <ol class="pubs">
-          <li class="pub">
-            <a class="pub-fig" href="assets/papers/grpo.png" target="_blank" rel="noreferrer">
-              <img src="assets/papers/grpo.png" alt="GRPO signal reshaping architecture" loading="lazy" />
-            </a>
-            <div class="pub-body">
-              <p class="pub-title">
-                Signal Reshaping for GRPO in Weak-Feedback Agentic Code Repair
-              </p>
-              <p class="pub-venue">
-                <span class="tag preprint">Preprint</span>
-              </p>
-              <p class="pub-desc">
-                Reframes weak-feedback multi-turn code repair as a GRPO
-                trainability problem, using layered rewards, step-level process
-                weighting, and failure-cause-aware rollout governance to lift
-                two-stage repair from 0.385 to 0.535.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2605.07276" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </div>
-          </li>
-
-          <li class="pub">
-            <a class="pub-fig" href="assets/papers/holmes.png" target="_blank" rel="noreferrer">
-              <img src="assets/papers/holmes.png" alt="Holmes retrieve-explore-reason architecture" loading="lazy" />
-            </a>
-            <div class="pub-body">
-              <p class="pub-title">
-                Holmes: Multimodal Agentic Diagnosis for Mixed-Language Mobile
-                Crashes at Industrial Scale
-              </p>
-              <p class="pub-venue">
-                <span class="tag">FSE 2026, Industry Track</span>
-              </p>
-              <p class="pub-desc">
-                A retrieve&ndash;explore&ndash;reason multi-agent system for
-                post-mortem mobile crash diagnosis over WeChat's mixed-language
-                codebase, reaching 87.6% function-level localization accuracy and
-                running ~40k times in production.
-              </p>
-              <p class="pub-links">
-                <a href="https://dl.acm.org/doi/10.1145/3803437.3805212" target="_blank" rel="noreferrer">ACM</a>
-              </p>
-            </div>
-          </li>
-
-          <li class="pub">
-            <a class="pub-fig" href="assets/papers/reporeason.png" target="_blank" rel="noreferrer">
-              <img src="assets/papers/reporeason.png" alt="RepoReason benchmark architecture" loading="lazy" />
-            </a>
-            <div class="pub-body">
-              <p class="pub-title">
-                From Laboratory to Real-World Applications: Benchmarking Agentic
-                Code Reasoning at the Repository Level
-              </p>
-              <p class="pub-venue">
-                <span class="tag">ACL 2026 Main</span>
-                <span class="tag oral">Oral</span>
-              </p>
-              <p class="pub-desc">
-                Introduces RepoReason, a repository-level benchmark built on
-                abductive assertion verification and execution-driven mutation,
-                with ESV / MCL / DFI metrics that expose aggregation deficits in
-                frontier code agents.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2601.03731" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </div>
-          </li>
-
-          <li class="pub">
-            <a class="pub-fig" href="assets/papers/vulkey.png" target="_blank" rel="noreferrer">
-              <img src="assets/papers/vulkey.png" alt="VulKey pattern-guided repair architecture" loading="lazy" />
-            </a>
-            <div class="pub-body">
-              <p class="pub-title">
-                VulKey: Automated Vulnerability Repair Guided by Domain-Specific
-                Repair Patterns
-              </p>
-              <p class="pub-venue">
-                <span class="tag">FSE 2026</span>
-              </p>
-              <p class="pub-desc">
-                Guides vulnerability repair with a three-level abstraction of
-                CWE/NVD expert knowledge, improving PrimeVul and Vul4J accuracy
-                across languages and models.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2605.01769" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </div>
-          </li>
-
-          <li class="pub">
-            <a class="pub-fig" href="assets/papers/miohint.png" target="_blank" rel="noreferrer">
-              <img src="assets/papers/miohint.png" alt="MioHint LLM-assisted mutation architecture" loading="lazy" />
-            </a>
-            <div class="pub-body">
-              <p class="pub-title">
-                MioHint: LLM-Assisted Request Mutation for Whitebox REST API
-                Testing
-              </p>
-              <p class="pub-venue">
-                <span class="tag">ICSE 2026</span>
-              </p>
-              <p class="pub-desc">
-                Combines statement-level def-use analysis with LLM-generated
-                mutation hints to escape fitness plateaus in whitebox REST API
-                testing.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2504.05738" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </div>
-          </li>
-
-          <li class="pub">
-            <a class="pub-fig" href="assets/papers/combench.png" target="_blank" rel="noreferrer">
-              <img src="assets/papers/combench.png" alt="ComBench benchmark construction overview" loading="lazy" />
-            </a>
-            <div class="pub-body">
-              <p class="pub-title">
-                ComBench: A Repository-level Real-world Benchmark for Compilation
-                Error Repair
-              </p>
-              <p class="pub-venue">
-                <span class="tag preprint">Preprint</span>
-              </p>
-              <p class="pub-desc">
-                Mines and faithfully reproduces real C/C++ compilation failures
-                from GitHub CI histories, exposing the compile-but-incorrect gap
-                between compilable and semantically correct LLM patches.
-              </p>
-              <p class="pub-links">
-                <a href="https://arxiv.org/abs/2603.27333" target="_blank" rel="noreferrer">arXiv</a>
-              </p>
-            </div>
-          </li>
-        </ol>
       </section>
 
       <section id="experience" class="block">
@@ -438,6 +287,164 @@
             </div>
           </li>
         </ul>
+      </section>
+
+      <section id="publications" class="block">
+        <h2 class="section-label">Publications</h2>
+        <p class="note">First author on all listed works.</p>
+
+        <ol class="pubs">
+          <li class="pub" id="paper-grpo">
+            <a class="pub-fig" href="assets/papers/grpo.png" target="_blank" rel="noreferrer">
+              <img src="assets/papers/grpo-thumb.webp" width="840" height="594" alt="GRPO signal reshaping architecture" loading="lazy" />
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">
+                <a href="https://arxiv.org/abs/2605.07276" target="_blank" rel="noreferrer">Signal Reshaping for GRPO in Weak-Feedback Agentic Code Repair</a>
+              </h3>
+              <p class="pub-venue">
+                <span class="tag preprint">Preprint</span>
+              </p>
+              <p class="pub-result">
+                <strong>38.5% &rarr; 53.5%</strong> compile-and-semantic accuracy
+              </p>
+              <p class="pub-desc">
+                GRPO training improves code repair over the base model's zero-shot
+                result by learning from compilation and semantic feedback.
+              </p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2605.07276" target="_blank" rel="noreferrer">arXiv</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub" id="paper-holmes">
+            <a class="pub-fig" href="assets/papers/holmes.png" target="_blank" rel="noreferrer">
+              <img src="assets/papers/holmes-thumb.webp" width="840" height="348" alt="Holmes retrieve-explore-reason architecture" loading="lazy" />
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">
+                <a href="https://dl.acm.org/doi/10.1145/3803437.3805212" target="_blank" rel="noreferrer">Holmes: Multimodal Agentic Diagnosis for Mixed-Language Mobile
+                Crashes at Industrial Scale</a>
+              </h3>
+              <p class="pub-venue">
+                <span class="tag">FSE 2026, Industry Track</span>
+              </p>
+              <p class="pub-result">
+                <strong>87.6%</strong> function-level localization accuracy<br />
+                <strong>~40k</strong> production runs
+              </p>
+              <p class="pub-desc">
+                Diagnoses crashes in WeChat's mixed-language codebase by combining
+                retrieval, code exploration, and runtime evidence.
+              </p>
+              <p class="pub-links">
+                <a href="https://dl.acm.org/doi/10.1145/3803437.3805212" target="_blank" rel="noreferrer">ACM</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub" id="paper-reporeason">
+            <a class="pub-fig" href="assets/papers/reporeason.png" target="_blank" rel="noreferrer">
+              <img src="assets/papers/reporeason-thumb.webp" width="840" height="336" alt="RepoReason benchmark architecture" loading="lazy" />
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">
+                <a href="https://arxiv.org/abs/2601.03731" target="_blank" rel="noreferrer">From Laboratory to Real-World Applications: Benchmarking Agentic
+                Code Reasoning at the Repository Level</a>
+              </h3>
+              <p class="pub-venue">
+                <span class="tag">ACL 2026 Main</span>
+                <span class="tag oral">Oral</span>
+              </p>
+              <p class="pub-result">
+                <strong>Reveals gaps in reasoning across files.</strong>
+              </p>
+              <p class="pub-desc">
+                RepoReason tests whether code agents can combine evidence across a
+                repository to verify program behavior.
+              </p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2601.03731" target="_blank" rel="noreferrer">arXiv</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub" id="paper-vulkey">
+            <a class="pub-fig" href="assets/papers/vulkey.png" target="_blank" rel="noreferrer">
+              <img src="assets/papers/vulkey-thumb.webp" width="840" height="445" alt="VulKey pattern-guided repair architecture" loading="lazy" />
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">
+                <a href="https://arxiv.org/abs/2605.01769" target="_blank" rel="noreferrer">VulKey: Automated Vulnerability Repair Guided by Domain-Specific
+                Repair Patterns</a>
+              </h3>
+              <p class="pub-venue">
+                <span class="tag">FSE 2026</span>
+              </p>
+              <p class="pub-result">
+                <strong>Improves repair accuracy on PrimeVul and Vul4J.</strong>
+              </p>
+              <p class="pub-desc">
+                Uses patterns from known vulnerabilities to guide LLM repairs
+                across programming languages and models.
+              </p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2605.01769" target="_blank" rel="noreferrer">arXiv</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub" id="paper-miohint">
+            <a class="pub-fig" href="assets/papers/miohint.png" target="_blank" rel="noreferrer">
+              <img src="assets/papers/miohint-thumb.webp" width="840" height="554" alt="MioHint LLM-assisted mutation architecture" loading="lazy" />
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">
+                <a href="https://arxiv.org/abs/2504.05738" target="_blank" rel="noreferrer">MioHint: LLM-Assisted Request Mutation for Whitebox REST API
+                Testing</a>
+              </h3>
+              <p class="pub-venue">
+                <span class="tag">ICSE 2026</span>
+              </p>
+              <p class="pub-result">
+                <strong>Guides API testing beyond coverage plateaus.</strong>
+              </p>
+              <p class="pub-desc">
+                Uses program structure to guide LLM-generated API requests when
+                automated testing stops making progress.
+              </p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2504.05738" target="_blank" rel="noreferrer">arXiv</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub" id="paper-combench">
+            <a class="pub-fig" href="assets/papers/combench.png" target="_blank" rel="noreferrer">
+              <img src="assets/papers/combench-thumb.webp" width="840" height="311" alt="ComBench benchmark construction overview" loading="lazy" />
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">
+                <a href="https://arxiv.org/abs/2603.27333" target="_blank" rel="noreferrer">ComBench: A Repository-level Real-world Benchmark for Compilation
+                Error Repair</a>
+              </h3>
+              <p class="pub-venue">
+                <span class="tag preprint">Preprint</span>
+              </p>
+              <p class="pub-result">
+                <strong>Exposes the gap between compilable and correct repairs.</strong>
+              </p>
+              <p class="pub-desc">
+                Reproduces real C/C++ compilation failures from GitHub CI to
+                evaluate whether code agents produce correct patches.
+              </p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2603.27333" target="_blank" rel="noreferrer">arXiv</a>
+              </p>
+            </div>
+          </li>
+        </ol>
       </section>
 
       <footer class="page-footer">
