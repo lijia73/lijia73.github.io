@@ -679,7 +679,8 @@ a:hover {
   margin: 10px 0 0;
 }
 
-.entry-keys span {
+.entry-keys span,
+.entry-keys a {
   padding: 2px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
